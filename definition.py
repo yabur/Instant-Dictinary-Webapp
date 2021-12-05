@@ -9,7 +9,9 @@ class Definition:
 
     def get(self):
         df = pd.read_csv('data.csv')
-        return tuple(df.loc[df['word'] == self.term]['definition'])\
+        definitions = tuple(df.loc[df['word'] == self.term]['definition'])
+
+        return definitions
 
 d = Definition(term='moon')
 print(d.get())
